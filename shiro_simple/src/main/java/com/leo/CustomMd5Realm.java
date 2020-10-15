@@ -5,10 +5,13 @@ import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
+
+import java.util.Arrays;
 
 /**
  * 自定义realm可以将realm自定义，比如使用数据库
@@ -16,9 +19,17 @@ import org.apache.shiro.util.ByteSource;
 public class CustomMd5Realm extends AuthorizingRealm {
 
     //授权
+    //每次调用权限isPermitted 还有 hasRole 就授权一遍
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        return null;
+//        principalCollection.getPrimaryPrincipal(); //获取到用户principal，然后根据这个principal获取权限
+        SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
+        simpleAuthorizationInfo.addRole("admin");
+        //背地里是一个hashset
+        //添加权限方式，添加角色，添加权限字符串
+        simpleAuthorizationInfo.addRoles(Arrays.asList("admin","admin"));
+        simpleAuthorizationInfo.addStringPermission("user:*:001");
+        return simpleAuthorizationInfo;
     }
 
     //认证

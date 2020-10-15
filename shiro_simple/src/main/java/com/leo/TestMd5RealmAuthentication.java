@@ -39,5 +39,12 @@ public class TestMd5RealmAuthentication {
             e.printStackTrace();
         }
 
+        if (subject.isPermitted("user:create:001")){
+            System.out.println("允许");
+        }
+        if (subject.hasRole("admin")){
+            System.out.println("是管理员");
+        }
+
     }
 }
