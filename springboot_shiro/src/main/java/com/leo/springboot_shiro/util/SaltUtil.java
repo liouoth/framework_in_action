@@ -6,11 +6,11 @@ public class SaltUtil {
     private final static String originString = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ,./;':@!-=";
     private final static Random random = new Random();
 
-    public static String getSalt(int length){
+    public static String getSalt(int length) {
         StringBuffer stringBuffer = new StringBuffer();
-        for (int i = 0; i<length;i++){
+        for (int i = 0; i < length; i++) {
             stringBuffer.append(
-                    originString.charAt(random.nextInt(originString.length()-1))
+                    originString.charAt(random.nextInt(originString.length() - 1))
             );
         }
         return stringBuffer.toString();

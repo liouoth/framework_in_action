@@ -18,43 +18,43 @@ public class IndexController {
     private UserService userService;
 
     @RequestMapping("/index")
-    public String index(){
+    public String index() {
         return "index";
     }
 
 
     @RequestMapping("/login")
-    public String login(@RequestParam String password,@RequestParam String username){
-        AuthenticationToken token = new UsernamePasswordToken(username,password);
+    public String login(@RequestParam String password, @RequestParam String username) {
+        AuthenticationToken token = new UsernamePasswordToken(username, password);
         Subject subject = SecurityUtils.getSubject();
         try {
             subject.login(token);
         } catch (AuthenticationException e) {
             e.printStackTrace();
         }
-        if (subject.isAuthenticated()){
+        if (subject.isAuthenticated()) {
             return "index";
-        }else {
+        } else {
             return "login";
         }
     }
 
     @RequestMapping("/doRegister")
-    public String doRegister(@RequestParam String password,@RequestParam String username){
-        User user = userService.register(username,password);
-        if (user!=null){
+    public String doRegister(@RequestParam String password, @RequestParam String username) {
+        User user = userService.register(username, password);
+        if (user != null) {
             return "login";
         }
         return "register";
     }
 
     @RequestMapping("/register")
-    public String register(){
+    public String register() {
         return "register";
     }
 
     @RequestMapping("/logout")
-    public String logout(){
+    public String logout() {
         Subject subject = SecurityUtils.getSubject();
         subject.logout();
         return "login";

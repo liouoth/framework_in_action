@@ -1,5 +1,6 @@
 package com.leo.springboot_shiro.config;
 
+import com.leo.springboot_shiro.entity.MyByteSource;
 import com.leo.springboot_shiro.entity.User;
 import com.leo.springboot_shiro.service.UserService;
 import org.apache.shiro.authc.AuthenticationException;
@@ -24,24 +25,37 @@ public class CustomerRealm extends AuthorizingRealm {
     //资源控制
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
+        System.out.println("进入到授权");
         String principal = (String) principalCollection.getPrimaryPrincipal();
         User user = userService.findByUsername(principal);
-        if ("mwq1".equals(user.getUsername())){
-            SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
-            info.addRole("user");
-            info.addStringPermissions(Arrays.asList("user:add:people","user:update:people"));
-            return info;
-        }
-        return null;
+        SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+        //添加角色
+        user.getRoles().forEach(
+                r -> {
+                    info.addRole(r.getName());
+                    r.getPermissions().forEach(
+                            p -> info.addStringPermission(p.getPermission())
+                    );
+                }
+        );
+//        假的模拟数据
+//        if ("mwq1".equals(user.getUsername())){
+//            SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+//            info.addRole("user");
+//            info.addStringPermissions(Arrays.asList("user:add:people","user:update:people"));
+//            return info;
+//        }
+        return info;
     }
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
+        System.out.println("进入到认证");
         String principal = (String) authenticationToken.getPrincipal();
         User user = userService.findByUsername(principal);
-        if (user!=null){
-            return new SimpleAuthenticationInfo(principal,user.getPassword(),
-                    ByteSource.Util.bytes(user.getSalt()),getName());
+        if (user != null) {
+            return new SimpleAuthenticationInfo(principal, user.getPassword(),
+                    new MyByteSource(user.getSalt()), getName());
         }
         return null;
     }

@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.*;
 public class PeopleController {
     @RequestMapping("/add")
     @ResponseBody
-    public String add(){
+    public String add() {
         //获取对象
         Subject subject = SecurityUtils.getSubject();
-        if (subject.hasRole("admin")){
+        if (subject.hasRole("admin")) {
             return "可以创建";
-        }else {
+        } else {
             return "不可以创建";
         }
 
@@ -27,9 +27,9 @@ public class PeopleController {
     @RequestMapping("/update")
     @ResponseBody
     //可以使用logical进行操作关系
-    @RequiresRoles(value = {"user","admin"},logical = Logical.OR)
+    @RequiresRoles(value = {"user", "admin"}, logical = Logical.OR)
 //    @RequiresPermissions("user:update:people")
-    public String update(){
+    public String update() {
         return "可以使用";
     }
 }

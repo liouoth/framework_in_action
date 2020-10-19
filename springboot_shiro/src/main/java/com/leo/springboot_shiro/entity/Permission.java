@@ -1,12 +1,13 @@
 package com.leo.springboot_shiro.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "permission")
-public class Permission {
+public class Permission implements Serializable {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String permission;

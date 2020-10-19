@@ -13,17 +13,17 @@ public class UserService {
     @Autowired
     private UserDao userDao;
 
-    public User register(String username,String password){
+    public User register(String username, String password) {
         User user = new User();
         user.setUsername(username);
         String salt = SaltUtil.getSalt(6);
-        String md5SaltString = new Md5Hash(password,salt,1024).toHex();
+        String md5SaltString = new Md5Hash(password, salt, 1024).toHex();
         user.setPassword(md5SaltString);
         user.setSalt(salt);
         return userDao.save(user);
     }
 
-    public User findByUsername(String username){
+    public User findByUsername(String username) {
         return userDao.findByUsername(username);
     }
 }
