@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/spring_in_action" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/shiro_simple/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_shiro/pom.xml" />
+        <option value="$PROJECT_DIR$/elasticsearch_in_actions/pom.xml" />
+        <option value="$PROJECT_DIR$/es_project_in_actions/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_in_action/pom.xml" />
       </list>
     </option>
   </component>

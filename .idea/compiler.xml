@@ -6,17 +6,25 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="es_project_in_actions" />
         <module name="shiro_simple" />
+        <module name="spring_in_action" />
         <module name="springboot_shiro" />
+        <module name="elasticsearch_in_actions" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="elasticsearch_in_actions" target="1.8" />
+      <module name="es_project_in_actions" target="1.8" />
       <module name="shiro_simple" target="1.8" />
+      <module name="spring_in_action" target="1.8" />
       <module name="springboot_shiro" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="elasticsearch_in_actions" options="-parameters" />
+      <module name="es_project_in_actions" options="-parameters" />
       <module name="springboot_shiro" options="-parameters" />
     </option>
   </component>

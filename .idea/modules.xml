@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/elasticsearch_in_actions/elasticsearch_in_actions.iml" filepath="$PROJECT_DIR$/elasticsearch_in_actions/elasticsearch_in_actions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/es_project_in_actions/es_project_in_actions.iml" filepath="$PROJECT_DIR$/es_project_in_actions/es_project_in_actions.iml" />
       <module fileurl="file://$PROJECT_DIR$/shiro_simple/shiro_simple.iml" filepath="$PROJECT_DIR$/shiro_simple/shiro_simple.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_in_action/spring_in_action.iml" filepath="$PROJECT_DIR$/spring_in_action/spring_in_action.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot_shiro/springboot_shiro.iml" filepath="$PROJECT_DIR$/springboot_shiro/springboot_shiro.iml" />
     </modules>
   </component>
