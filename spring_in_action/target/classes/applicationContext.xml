@@ -1,12 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!--使用id可以解耦-->
     <!--bean id(唯一标识)，class（bean类型，不唯一）-->
-    <bean id="person" class="com.leo.entity.Person"></bean>
+    <bean id="person" class="com.leo.entity.Person">
+        <property name="name">
+            <value>123</value>
+        </property>
+    </bean>
 <!--    <bean id="user" class="com.leo.entity.User"></bean>-->
     <!--不加id-->
 <!--    <bean class="com.leo.entity.User" name="u" id="user"></bean>-->
 <!--    <bean class="com.leo.entity.User" id="/xxx"></bean>-->
+
+    <bean id="userService" class="com.leo.service.UserService">
+        <property name="userDao">
+            <!--或者将通过ref获取用户自定义类型，进行注入，这样可以复用-->
+<!--            <bean class="com.leo.dao.UserDao"></bean>-->
+            <ref bean="userDao"></ref>
+        </property>
+    </bean>
+
+    <!--命名空间-->
+    <bean id="personSimplify" class="com.leo.entity.Person" p:age="11" p:name="小贱人">
+    </bean>
+
+    <!--命名空间,自定义-->
+    <bean id="userServiceSimplify" class="com.leo.service.UserService" p:userDao-ref="userDao">
+    </bean>
+    <bean class="com.leo.dao.UserDao" id="userDao"></bean>
+
+    <!-- 构造注入-->
+    <bean class="com.leo.entity.Animal" id="animal">
+        <constructor-arg name="name">
+            <value>dog</value>
+        </constructor-arg>
+        <constructor-arg>
+            <value>12</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="conn" class="com.leo.complexObject.ConnectionFactoryBean">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/testblog?useSSL=false"/>
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
+    </bean>
+
+    <bean id="connection" class="com.leo.complexObject.ConnectionFactory">
+    </bean>
+
+    <bean id="connection2" factory-bean="connection" factory-method="getConnection"></bean>
+
+    <bean id="life" scope="singleton" class="com.leo.entity.Life">
+        <property name="name">
+            <value>123</value>
+        </property>
+    </bean>
+    <bean id="life2" scope="singleton" class="com.leo.entity.Life2" init-method="init">
+        <property name="name">
+            <value>123</value>
+        </property>
+    </bean>
+<!--    <bean id="life" scope="singleton" class="com.leo.entity.Life" lazy-init="true"></bean>-->
+
+    <bean id="connection3"  class="com.leo.complexObject.StaticConnectionFactory" factory-method="getConnection">
+    </bean>
 </beans>

@@ -9,7 +9,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Arrays;
 
-public class AppTest {
+/**
+ * spring的基本使用
+ */
+public class BasicTest {
     @Test
     public void test1(){
         ApplicationContext ctx = new ClassPathXmlApplicationContext("/applicationContext.xml");
