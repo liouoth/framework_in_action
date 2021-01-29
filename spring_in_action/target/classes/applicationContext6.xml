@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!--原始类-->
+    <bean id="userService" class="com.leo.dynamicproxy.UserServiceImpl"/>
+
+    <!--spring使用BeanPostProcessor进行加工-->
+    <!--这个id好像是默认的-->
+    <bean id="processService" class="com.leo.aop.ProxyBeanProcessor"/>
+</beans>

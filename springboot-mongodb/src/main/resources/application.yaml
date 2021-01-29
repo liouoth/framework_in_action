@@ -1,0 +1,12 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: will-test
+  #mongodb
+#  data:
+#    mongodb:
+#      uri: mongodb://192.168.0.69:27020/bdip?connectTimeoutMS=30000&minPoolSize=4&maxPoolSize=10
+#      username: root
+#      password: BIMbim123

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="product" class="com.leo.entity.Product">
+        <property name="id" value="1"></property>
+        <property name="birthday" value="2020-02-02"></property>
+    </bean>
+
+    <!--将类型转换器注入spring-->
+    <bean id="myDateConverter" class="com.leo.converter.MyDateConverter">
+        <property name="pattern"><value>yyyy-mm-dd</value></property>
+    </bean>
+
+    <!--用户注册类型转换器-->
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <ref bean="myDateConverter"/>
+            </set>
+        </property>
+    </bean>
+</beans>

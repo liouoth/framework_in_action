@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean id="ssfb" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource">
+            <ref bean="dataSource"/>
+        </property>
+        <!--指定实体所定义的包，类名叫什么，别名就是什么-->
+        <property name="typeAliasesPackage" value="com.leo.entity"/>
+        <!--进行通配设置，xml文件，可使用通配符，直接扫描-->
+        <property name="mapperLocations">
+            <list>
+                <value>classpath:mapper/*Mapper.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="dataSource" class="org.apache.ibatis.datasource.pooled.PooledDataSource">
+        <property name="driver" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/test?useSSL=false" />
+        <property name="username" value="root" />
+        <property name="password" value="123456" />
+    </bean>
+
+    <!--扫描dao接口的位置，通过这个实现-->
+    <bean id="mapper" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="ssfb"/>
+        <property name="basePackage" value="com.leo.dao"/>
+    </bean>
+</beans>
