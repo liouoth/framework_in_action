@@ -30,6 +30,7 @@
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.48" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.1.14.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.1.14.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.8.8" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.8.3" level="project" />
   </component>

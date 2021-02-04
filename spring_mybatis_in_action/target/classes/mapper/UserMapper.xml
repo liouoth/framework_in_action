@@ -6,4 +6,9 @@
     <insert id="save" parameterType="user">
         insert into user(name, password) values (#{name},#{password})
     </insert>
+    <select id="find" resultType="java.lang.Integer">
+        select count(*)
+        from user
+        where name = #{name}
+    </select>
 </mapper>

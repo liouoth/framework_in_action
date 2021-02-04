@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="1369f979-bc94-45d8-bf7c-06f305486f84" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../spring_in_action/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring_in_action/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_in_action/src/test/java/com/leo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring_in_action/src/test/java/com/leo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring_in_action/src/main/java/com/leo/aspect/FuncAspect.aj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/leo/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/leo/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/leo/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/leo/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +91,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestSpringMybatis.test">
+  <component name="RunManager" selected="JUnit.TestTransaction.test">
     <configuration name="TestMybatis" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TestMybatis" />
       <module name="spring_mybatis_in_action" />
@@ -103,8 +109,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestTransaction.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring_mybatis_in_action" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestTransaction" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestTransaction.test" />
         <item itemvalue="JUnit.TestSpringMybatis.test" />
         <item itemvalue="Application.TestMybatis" />
       </list>
@@ -138,6 +155,7 @@
       <workItem from="1611831555180" duration="263000" />
       <workItem from="1611831849546" duration="1267000" />
       <workItem from="1611833138898" duration="9551000" />
+      <workItem from="1612174238652" duration="9074000" />
     </task>
     <servers />
   </component>
