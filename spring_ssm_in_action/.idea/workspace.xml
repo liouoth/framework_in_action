@@ -6,17 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42273a6f-23c0-41e8-abf1-403a848333c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../spring_in_action/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring_in_action/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_in_action/src/main/java/com/leo/aspect/FuncAspect.aj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_in_action/src/test/java/com/leo/SbTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring_in_action/src/test/java/com/leo/SbTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_mybatis_in_action/src/main/java/com/leo/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring_mybatis_in_action/src/main/java/com/leo/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_mybatis_in_action/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring_mybatis_in_action/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_mybatis_in_action/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring_mybatis_in_action/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_mybatis_in_action/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring_mybatis_in_action/target/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_mybatis_in_action/target/classes/com/leo/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../spring_mybatis_in_action/target/classes/com/leo/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring_mybatis_in_action/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring_mybatis_in_action/target/classes/mapper/UserMapper.xml" afterDir="false" />
-    </list>
+    <list default="true" id="42273a6f-23c0-41e8-abf1-403a848333c1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +168,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1612237590490</updated>
-      <workItem from="1612237612321" duration="21000000" />
+      <workItem from="1612237612321" duration="21067000" />
     </task>
     <servers />
   </component>
